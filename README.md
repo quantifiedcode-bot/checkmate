@@ -23,7 +23,7 @@ The first working version of the tool nears completion, please be patient :)
 
 ## How to contribute
 
-Contributions are very welcome, and are greatly appreciated! Every little bit helps, and credit will always be given. Please read [here](CONTRIBUTING.md), how you can contribute.
+Contributions are very welcome, and are greatly appreciated! Every little bit helps, and credit will always be given. Please read [here](/CONTRIBUTING.md), how you can contribute.
 
 ## Get Started!
 Are you ready to contribute? Here's how to set up `checkmate` for local development.
