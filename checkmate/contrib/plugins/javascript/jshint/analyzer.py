@@ -21,18 +21,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from __future__ import unicode_literals
 from __future__ import absolute_import
 
-import ast
-import os.path
-import sys
 import os
-import checkmate.settings as settings
 import tempfile
 import json
 import subprocess
 
+import checkmate.settings as settings
 from checkmate.lib.analysis.base import BaseAnalyzer
 
-import tempfile
 
 class JSHintAnalyzer(BaseAnalyzer):
 
