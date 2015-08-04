@@ -62,7 +62,7 @@ Are you ready to contribute? Here's how to set up `checkmate` for local developm
 
 Before you submit a Pull Request, check that it meets these guidelines:
 
-1. Check on [https://www.quantifiedcode.com/app#/project/gh:quantifiedcode:checkmate](Quantifiedcode) whether your code is free of errors (no login required).
+1. Check on [Quantifiedcode](https://www.quantifiedcode.com/app#/project/gh:quantifiedcode:checkmate) whether your code is free of errors (no login required).
 
 2. The Pull Request should include tests.
 
