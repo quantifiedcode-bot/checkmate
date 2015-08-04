@@ -26,7 +26,6 @@ import tempfile
 import json
 import subprocess
 
-import checkmate.settings as settings
 from checkmate.lib.analysis.base import BaseAnalyzer
 
 
