@@ -28,8 +28,7 @@ import subprocess
 
 from checkmate.lib.analysis.base import BaseAnalyzer
 
-
-class JSHintAnalyzer(BaseAnalyzer):
+class JSLintAnalyzer(BaseAnalyzer):
 
     def summarize(self,items):
         pass
@@ -41,26 +40,23 @@ class JSHintAnalyzer(BaseAnalyzer):
             with f:
                 f.write(file_revision.get_file_content())
             try:
-                result = subprocess.check_output(["jshint",
-                                                  "--filename",
-                                                  file_revision.path,
-                                                  "--reporter",
-                                                  os.path.join(os.path.abspath(__file__+"/.."),
-                                                               'js/json_reporter'),
+                result = subprocess.check_output(["jslint",
+                                                  "--json",
                                                   f.name])
             except subprocess.CalledProcessError as e:
-                if e.returncode == 2:
+                if e.returncode == 1:
                     result = e.output
                 else:
                     raise
-            json_result = json.loads(result)
-            for issue in json_result:
+            json_result = json.loads(e.output)
+
+            for issue in json_result[1]:
                 issues.append({
-                    'code' : issue['error']['code'],
-                    'location' : ((issue['error']['line'],issue['error']['character']),
-                                  (issue['error']['line'],None)),
-                    'data' : issue
-                    })
+                    "code": issue["code"],
+                    "location": ((issue["line"], issue["character"]),
+                                 (issue["line"], None)),
+                    "data": issue})
+
         finally:
             os.unlink(f.name)
         return {'issues' : issues}

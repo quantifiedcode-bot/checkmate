@@ -40,7 +40,7 @@ Are you ready to contribute? Here's how to set up `checkmate` for local developm
 
         $ mkvirtualenv checkmate
         $ cd checkmate/
-        $ python setup.py
+        $ sudo python setup.py build install
 
 5. Create a separate branch for each issues in your local development environment:
 
